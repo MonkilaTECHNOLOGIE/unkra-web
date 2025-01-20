@@ -152,7 +152,8 @@
 
                     if (isMatch) {
                         alert('Connexion réussie');
-                        window.location.href = "menu.html";
+                        //window.location.href = "menu.html";
+                        loginUser('xxx-xxx-xxx');
                         // Redirection ou autre action
                     } else {
                         alert('Mot de passe incorrect');
@@ -219,6 +220,11 @@
             // Utiliser une bibliothèque comme bcrypt.js côté client
             //return password === hashedPassword; // Placeholder (remplacez par la vérification réelle)
             return bcrypt.compareSync(password, hashedPassword);
+        }
+
+        function loginUser(token) {
+            localStorage.setItem('userToken', token);
+            window.location.href = 'menu.html';
         }
     </script>
 </body>
