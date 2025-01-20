@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNKRA</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsoneditor/dist/jsoneditor.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor/dist/jsoneditor.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>UNKRA - Gestion des Données</h1>
-        <div id="actions">
-            <select id="dataChoice">
-                <option value="cabine">Cabine</option>
-                <option value="branche">Branche</option>
-                <option value="depart">Depart</option>
-                <option value="poche">Poche</option>
+    <div id="app">
+        <h1>UNKRA</h1>
+        <div id="controls">
+            <select id="dataSelect">
+                <option value="">-- Select a Collection --</option>
+                <option value="Cabine">Cabine</option>
+                <option value="Branche">Branche</option>
+                <option value="Depart">Depart</option>
+                <option value="Poche">Poche Noire</option>
+                <option value="Echantillon">Echantillon</option>
             </select>
-            <button id="fetchDataBtn">Afficher les données</button>
+            <button id="fetchData">Fetch and Edit</button>
         </div>
-        <div id="dataDisplay">
-            <table id="dataTable">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Contenu</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données s'afficheront ici -->
-                </tbody>
-            </table>
-        </div>
+        <iframe id="editorIframe" src="editor.html"></iframe>
     </div>
     <script src="script.js"></script>
 </body>
