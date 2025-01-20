@@ -1,59 +1,27 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
 
-.container {
+#app {
     max-width: 800px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+    margin: 20px auto;
     text-align: center;
+}
+
+#controls {
     margin-bottom: 20px;
 }
 
-#actions {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+select, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
 }
 
-#dataDisplay {
-    overflow-x: auto;
-}
-
-table {
+iframe {
     width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #007bff;
-    color: white;
-}
-
-button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
+    height: 400px;
+    border: 1px solid #ccc;
 }
