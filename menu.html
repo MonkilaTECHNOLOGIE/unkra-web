@@ -178,7 +178,7 @@
 <body>
     <div class="navbar">
         <h1>UNKRA</h1>
-        <button onclick="showModal('Vous avez été déconnecté.', 'login.html')">Déconnexion</button>
+        <button onclick="showModalLogout('Vous avez été déconnecté.', 'login.html')">Déconnexion</button>
     </div>
 
     <div class="container">
@@ -215,6 +215,18 @@
             document.getElementById('modal-message').innerText = message;
             const modal = document.getElementById('modal');
             modal.style.display = 'flex';
+
+            setTimeout(() => {
+                window.location.href = redirectUrl;
+            }, 2000);
+        }
+
+        function showModalLogout(message, redirectUrl) {
+            document.getElementById('modal-message').innerText = message;
+            const modal = document.getElementById('modal');
+            modal.style.display = 'flex';
+
+            localStorage.clear();
 
             setTimeout(() => {
                 window.location.href = redirectUrl;

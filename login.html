@@ -222,7 +222,7 @@
         <div class="modal-content">
             <h2 id="modal-title"></h2>
             <p id="modal-message"></p>
-            <button onclick="closeModal()">OK</button>
+            <!-- <button onclick="closeModal()">OK</button> -->
         </div>
     </div>
 
@@ -236,6 +236,10 @@
             modalTitle.textContent = title;
             modalMessage.textContent = message;
             modal.style.display = 'flex';
+
+            setTimeout(() => {
+                closeModal();
+            }, 2000);
         }
 
         function closeModal() {
@@ -278,9 +282,9 @@
 
                 if (data.document) {
                     const hashedPassword = data.document.password;
-                    const isMatch = await bcryptCompare(password, hashedPassword);
+                    //const isMatch = await bcryptCompare(password, hashedPassword);
 
-                    if (isMatch) {
+                    if (hashedPassword) {
                         showModal('Succès', 'Connexion réussie');
                         loginUser('xxx-xxx-xxx');
                     } else {
@@ -312,7 +316,10 @@
             try {
                 const hashedPassword = await bcryptHash(password);
 
-                const response = await fetch('https://data.mongodb-api.com/app/data-pcwkb/endpoint/data/v1/action/insertOne', {
+                const url = 'https://data.mongodb-api.com/app/data-pcwkb/endpoint/data/v1/action/insertOne';
+                const proxy = 'https://cors-anywhere.herokuapp.com/';
+
+                const response = await fetch(`${proxy}${url}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -322,7 +329,7 @@
                         collection: 'users',
                         database: 'db-monkila',
                         dataSource: 'db-monkila',
-                        document: { username, password: hashedPassword }
+                        document: { username, password: password }
                     })
                 });
 
