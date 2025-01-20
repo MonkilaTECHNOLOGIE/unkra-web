@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de couverture</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 800px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subheader {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            margin: 15px 0;
+        }
+
+        .subversion {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .bar-frame {
+            display: flex;
+            height: 10px;
+            margin: 10px 50px;
+        }
+
+        .bar-frame div {
+            flex: 1;
+        }
+
+        .blue-bar { background-color: blue; }
+        .yellow-bar { background-color: yellow; }
+        .red-bar { background-color: red; }
+
+        .thesis-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        .author {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .thesis-info {
+            font-size: 14px;
+            text-align: left;
+            margin: 0 20px 20px;
+            line-height: 1.5;
+        }
+
+        .progress {
+            width: 300px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px auto;
+        }
+
+        .progress-bar {
+            width: 50%;
+            height: 100%;
+            background-color: blue;
+            animation: progress-animation 5s linear infinite;
+        }
+
+        @keyframes progress-animation {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Enseignement Supérieur et Universitaire<br>Université Pédagogique Nationale
+        </div>
+        <div class="subheader">
+            B.P. 8815 KINSHASA / NGALIEMA<br>FACULTÉ DES SCIENCES<br>DÉPARTEMENT DE PHYSIQUE ET DES SCIENCES APPLIQUÉES
+        </div>
+        <img src="images/logo_upn.png" alt="Logo UPN" class="logo" width="100" height="100">
+        <div class="subversion">BÊTA VERSION</div>
+        <div class="bar-frame">
+            <div class="blue-bar"></div>
+            <div class="yellow-bar"></div>
+            <div class="red-bar"></div>
+        </div>
+        <div class="thesis-title">
+            OPTIMISATION DE LA MISE À LA TERRE EFFECTIVE DU<br>
+            NEUTRE BASÉE SUR LE SYSTÈME D’INFORMATION<br>
+            GÉOGRAPHIQUE POUR LA GESTION INTELLIGENTE DU<br>
+            RÉSEAU MOYENNE TENSION DE LA SOCIÉTÉ NATIONALE<br>
+            D’ÉLECTRICITÉ / KINSHASA - OUEST
+        </div>
+        <div class="bar-frame">
+            <div class="blue-bar"></div>
+            <div class="yellow-bar"></div>
+            <div class="red-bar"></div>
+        </div>
+        <div class="author">
+            PAR<br>MONKILA NKIWA<br>Diplômé d’Études Approfondies en Sciences
+        </div>
+        <div class="thesis-info">
+            APPLICATION ECRITE EN Python DJANGO DANS LE CADRE DE MA THÈSE DE DOCTORAT EN SCIENCES<br><br>
+            <strong>Domaine</strong>: Sciences<br>
+            <strong>Option</strong>: Sciences Appliquées<br>
+            <strong>Orientation</strong>: Génie Informatique
+        </div>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "login.html"; // Redirection vers la page de connexion
+        }, 5000);
+    </script>
+</body>
+</html>
