@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +22,17 @@
             background-color: #D9D9D9;
             border-radius: 20px;
             overflow: hidden;
+            gap: 30px;
+            /* Ajout d'espace entre les sections */
         }
 
         .image-section {
             background: url('images/logo10.jpg') no-repeat center center/cover;
             width: 500px;
             height: 500px;
+            margin-right: 30px;
         }
+
 
         .form-section {
             padding: 30px;
@@ -36,7 +41,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-left: 50px;
+         
         }
 
         .form-section h1 {
@@ -95,11 +100,17 @@
         }
 
         @keyframes progress {
-            0% { width: 0; }
-            100% { width: 100%; }
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="image-section"></div>
@@ -228,4 +239,5 @@
         }
     </script>
 </body>
+
 </html>
