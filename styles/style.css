@@ -14,10 +14,26 @@ body {
     margin-bottom: 20px;
 }
 
-select, button {
+button {
     padding: 10px;
     margin: 5px;
     font-size: 16px;
+    border-color: #007fff;
+    border-radius: 10px;
+    color: white;
+    background-color: #007fff;
+
+}
+
+select {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border-color: #007fff;
+    border-radius: 10px;
+    /* color: white; */
+    /* background-color: #007fff; */
+
 }
 
 iframe {
