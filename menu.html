@@ -201,6 +201,16 @@
     </div>
 
     <script>
+
+        function checkLoginStatus() {
+            const token = localStorage.getItem('userToken');
+            if (!token) {
+                showModal('Vous devez être connecté pour accéder à cette page...', 'login.html')
+            }
+        }
+        
+        checkLoginStatus();
+
         function showModal(message, redirectUrl) {
             document.getElementById('modal-message').innerText = message;
             const modal = document.getElementById('modal');
