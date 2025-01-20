@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt.js/2.4.3/bcrypt.min.js"></script>
     <title>UNKRA</title>
     <style>
         body {
@@ -151,6 +152,7 @@
 
                     if (isMatch) {
                         alert('Connexion réussie');
+                        window.location.href = "menu.html";
                         // Redirection ou autre action
                     } else {
                         alert('Mot de passe incorrect');
@@ -207,12 +209,16 @@
 
         function bcryptHash(password) {
             // Utiliser une bibliothèque comme bcrypt.js côté client
-            return password; // Placeholder (remplacez par le hash réel)
+            //return password; // Placeholder (remplacez par le hash réel)
+
+            const saltRounds = 10;
+            return bcrypt.hashSync(password, saltRounds);
         }
 
         function bcryptCompare(password, hashedPassword) {
             // Utiliser une bibliothèque comme bcrypt.js côté client
-            return password === hashedPassword; // Placeholder (remplacez par la vérification réelle)
+            //return password === hashedPassword; // Placeholder (remplacez par la vérification réelle)
+            return bcrypt.compareSync(password, hashedPassword);
         }
     </script>
 </body>
