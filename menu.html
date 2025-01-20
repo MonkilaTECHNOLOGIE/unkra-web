@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKRA</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #007fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .image-container img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+        }
+        .frame {
+            background-color: #D9D9D9;
+            border-radius: 20px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .frame h1 {
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            height: 90px;
+            background-color: #0085FF;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 90px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="images/logo10.jpg" alt="Logo">
+        </div>
+        <div class="frame">
+            <h1>Bienvenue Chez UNKRA</h1>
+            <button class="button" onclick="goToCarte()">Visualiser la carte</button>
+            <button class="button" onclick="goToData()">Visualiser les données</button>
+        </div>
+    </div>
+
+    <script>
+        function goToCarte() {
+            // Simulation de l'exécution de "ViewCarte.py"
+            alert("Chargement de la carte...");
+            // Ajoutez votre logique pour naviguer ou afficher la carte ici
+        }
+
+        function goToData() {
+            // Simulation de l'exécution de "View.py"
+            alert("Chargement des données...");
+            // Ajoutez votre logique pour naviguer ou afficher les données ici
+        }
+    </script>
+</body>
+</html>
