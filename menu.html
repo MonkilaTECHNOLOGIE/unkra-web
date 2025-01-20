@@ -10,14 +10,42 @@
             font-family: Arial, sans-serif;
             background-color: #007fff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .navbar button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar button:hover {
+            background-color: darkred;
         }
         .container {
             display: flex;
             align-items: center;
             gap: 40px;
+            margin-top: 50px;
         }
         .image-container img {
             width: 500px;
@@ -59,6 +87,11 @@
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <h1>UNKRA</h1>
+        <button onclick="logoutUser()">Déconnexion</button>
+    </div>
+
     <div class="container">
         <div class="image-container">
             <img src="images/logo10.jpg" alt="Logo">
@@ -71,16 +104,31 @@
     </div>
 
     <script>
+        function checkLoginStatus() {
+            const token = localStorage.getItem('userToken'); 
+            if (!token) {
+                alert('Vous devez être connecté pour accéder à cette page.');
+                window.location.href = 'login.html';
+            }
+        }
+
+        checkLoginStatus();
+        
         function goToCarte() {
-            // Simulation de l'exécution de "ViewCarte.py"
             alert("Chargement de la carte...");
-            // Ajoutez votre logique pour naviguer ou afficher la carte ici
+            window.location.href = 'carte.html';
+            
         }
 
         function goToData() {
-            // Simulation de l'exécution de "View.py"
             alert("Chargement des données...");
-            // Ajoutez votre logique pour naviguer ou afficher les données ici
+            window.location.href = 'data.html';
+        }
+
+        function logoutUser() {
+            localStorage.removeItem('userToken');
+            alert("Vous avez été déconnecté.");
+            window.location.href = 'login.html'; 
         }
     </script>
 </body>

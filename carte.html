@@ -21,4 +21,16 @@
 <body>
     <iframe src="https://monkilatechnologie.github.io/carte-these-monkila/" title="UNKRA"></iframe>
 </body>
+
+<script>
+    function checkLoginStatus() {
+        const token = localStorage.getItem('userToken'); 
+        if (!token) {
+            alert('Vous devez être connecté pour accéder à cette page.');
+            window.location.href = 'login.html';
+        }
+    }
+
+    checkLoginStatus();
+</script>
 </html>

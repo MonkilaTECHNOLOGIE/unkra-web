@@ -2,6 +2,17 @@ const dataSelect = document.getElementById('dataSelect');
 const fetchDataButton = document.getElementById('fetchData');
 const editorIframe = document.getElementById('editorIframe');
 
+
+function checkLoginStatus() {
+    const token = localStorage.getItem('userToken'); 
+    if (!token) {
+        alert('Vous devez être connecté pour accéder à cette page.');
+        window.location.href = 'login.html';
+    }
+}
+
+checkLoginStatus();
+
 fetchDataButton.addEventListener('click', async () => {
     const selectedValue = dataSelect.value;
     if (!selectedValue) {
