@@ -3,15 +3,31 @@ const fetchDataButton = document.getElementById('fetchData');
 const editorIframe = document.getElementById('editorIframe');
 
 
+
+function showModal(message, redirectUrl) {
+    document.getElementById('modal-message').innerText = message;
+    const modal = document.getElementById('modal');
+    modal.style.display = 'flex';
+
+    setTimeout(() => {
+        window.location.href = redirectUrl;
+    }, 2000);
+}
+
+
 function checkLoginStatus() {
     const token = localStorage.getItem('userToken');
     if (!token) {
-        alert('Vous devez être connecté pour accéder à cette page.');
-        window.location.href = 'login.html';
+        showModal('Vous devez être connecté pour accéder à cette page...', 'login.html')
     }
 }
 
 checkLoginStatus();
+
+editorIframe.addEventListener('load', () => {
+    editorIframe.classList.add('loaded');
+});
+
 
 fetchDataButton.addEventListener('click', async () => {
     const selectedValue = dataSelect.value;
