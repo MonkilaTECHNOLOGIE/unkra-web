@@ -228,6 +228,8 @@
 
     <script>
 
+        localStorage.clear();
+
         function showModal(title, message) {
             const modal = document.getElementById('modal');
             const modalTitle = document.getElementById('modal-title');
@@ -354,7 +356,7 @@
 
         function loginUser(token) {
             localStorage.setItem('userToken', token);
-            window.location.href = 'menu.html';
+            window.location.href = '/menu/';
         }
     </script>
 </body>
