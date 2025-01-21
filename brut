@@ -172,67 +172,13 @@
         .modal-content button:hover {
             background-color: #555;
         }
-
-        .profile-container {
-            position: relative;
-            cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .profile-container img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            background-color: white;
-            color: black;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: black;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .dropdown-menu a:last-child {
-            color: red;
-        }
-
-        .profile-container:hover .dropdown-menu {
-            display: block;
-        }
-
     </style>
 </head>
 
 <body>
     <div class="navbar">
         <h1>UNKRA</h1>
-        <div class="profile-container">
-            <img src="profil.jpg" alt="Profile Picture">
-            <div class="dropdown-menu">
-                <a >Profil</a>
-                <a onclick="showModalLogout('Vous avez été déconnecté.', '/unkra-web/login/')">Déconnexion</a>
-            </div>
-        </div>
+        <button onclick="showModalLogout('Vous avez été déconnecté.', '/unkra-web/login/')">Déconnexion</button>
     </div>
 
     <div class="container">
