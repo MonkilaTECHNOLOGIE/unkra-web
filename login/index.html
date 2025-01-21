@@ -286,7 +286,7 @@
                     const hashedPassword = data.document.password;
                     //const isMatch = await bcryptCompare(password, hashedPassword);
 
-                    if (hashedPassword) {
+                    if (hashedPassword == password) {
                         showModal('Succès', 'Connexion réussie');
                         loginUser('xxx-xxx-xxx');
                     } else {
