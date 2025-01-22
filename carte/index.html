@@ -171,10 +171,10 @@
         <div></div>
     </div>
 
-    <div class="navbar hidden" id="nav-menu">
+    <!-- <div class="navbar hidden" id="nav-menu">
         <h1></h1>
        <button onclick="goToMenu()">Esc</button>
-    </div>
+    </div> -->
 
     
     <iframe src="https://monkilatechnologie.github.io/carte-these-monkila/" title="UNKRA"></iframe>
@@ -199,7 +199,7 @@
         }
         
         checkLoginStatus();
-        
+
         const navbar = document.getElementById('nav-menu');
 
 
@@ -224,6 +224,12 @@
             document.querySelector('.loader').style.display = 'none';
             iframe.classList.add('loaded');
             navbar.classList.remove('hidden');
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' || event.code === 'Escape') {
+                goToMenu();
+            }
         });
     </script>
 </body>

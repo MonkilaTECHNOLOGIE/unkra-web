@@ -194,10 +194,10 @@
     </style>
 </head>
 <body>
-    <div class="navbar" id="nav-menu">
+    <!-- <div class="navbar" id="nav-menu">
         <h1></h1>
        <button onclick="goToMenu()">Esc</button>
-    </div>
+    </div> -->
 
     <div id="app">
         <h1>UNKRA</h1>
@@ -228,6 +228,12 @@
         function goToMenu() {
             window.location.href = '/unkra-web/menu/';
         }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' || event.code === 'Escape') {
+                goToMenu();
+            }
+        });
     </script>
 </body>
 </html>
