@@ -17,6 +17,48 @@
             justify-content: center;
         }
 
+        .navbar {
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        .navbar button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-right: 40px;
+        }
+
+        .navbar button:hover {
+            background-color: darkred;
+        }
+
+      
+
         .loader {
             position: absolute;
             top: 50%;
@@ -128,7 +170,16 @@
         <div></div>
         <div></div>
     </div>
+
+    <div class="navbar hidden" id="nav-menu">
+        <h1></h1>
+       <button onclick="goToMenu()">Esc</button>
+    </div>
+
+    
     <iframe src="https://monkilatechnologie.github.io/carte-these-monkila/" title="UNKRA"></iframe>
+
+    
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -139,7 +190,7 @@
 
     <script>
 
-
+        
         function checkLoginStatus() {
             const token = localStorage.getItem('userToken');
             if (!token) {
@@ -148,6 +199,9 @@
         }
         
         checkLoginStatus();
+        
+        const navbar = document.getElementById('nav-menu');
+
 
         function showModal(message, redirectUrl) {
             document.getElementById('modal-message').innerText = message;
@@ -158,6 +212,10 @@
                 window.location.href = redirectUrl;
             }, 2000);
         }
+
+        function goToMenu() {
+            window.location.href = '/unkra-web/menu/';
+        }
      
 
         // Animation d'apparition de l'iframe
@@ -165,6 +223,7 @@
         iframe.addEventListener('load', () => {
             document.querySelector('.loader').style.display = 'none';
             iframe.classList.add('loaded');
+            navbar.classList.remove('hidden');
         });
     </script>
 </body>
