@@ -32,7 +32,7 @@ editorIframe.addEventListener('load', () => {
 fetchDataButton.addEventListener('click', async () => {
     const selectedValue = dataSelect.value;
     if (!selectedValue) {
-        alert("Please select a collection");
+        alert("Veuillez selectionner une collection");
         return;
     }
 
