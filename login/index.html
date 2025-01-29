@@ -226,13 +226,11 @@
         </div>
     </div>
 
-    <script src="api.js"></script>
-
     <script>
 
-        /* const apiKey = process.env.API_KEY;
+        const apiKey = process.env.API_KEY;
         const dataBase = process.env.DATABASE;
-        const dataSource = process.env.DATA_SOURCE; */
+        const dataSource = process.env.DATA_SOURCE;
 
         localStorage.clear();
 
@@ -331,12 +329,12 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'api-key': apiKey
+                        'api-key': 'avROr1S2KOP9G6BnMnIBBbPzBLxYVzoCdvNkNkJWVKZVzrgTW54uS83OP6wkXaul'
                     },
                     body: JSON.stringify({
                         collection: 'users',
-                        database: dataBase,
-                        dataSource: dataSource,
+                        database: 'db-monkila',
+                        dataSource: 'db-monkila',
                         document: { username, password: password }
                     })
                 });

@@ -2,9 +2,9 @@ const dataSelect = document.getElementById('dataSelect');
 const fetchDataButton = document.getElementById('fetchData');
 const editorIframe = document.getElementById('editorIframe');
 
-// const apiKey = process.env.API_KEY;
-// const dataBase = process.env.DATABASE;
-// const dataSource = process.env.DATA_SOURCE;
+const apiKey = process.env.API_KEY;
+const dataBase = process.env.DATABASE;
+const dataSource = process.env.DATA_SOURCE;
 
 
 
@@ -40,13 +40,14 @@ fetchDataButton.addEventListener('click', async () => {
         return;
     }
 
+    const apiKey = 'avROr1S2KOP9G6BnMnIBBbPzBLxYVzoCdvNkNkJWVKZVzrgTW54uS83OP6wkXaul';
     const url = 'https://data.mongodb-api.com/app/data-pcwkb/endpoint/data/v1/action/find';
     const proxy = 'https://cors-anywhere.herokuapp.com/';
 
     const payload = JSON.stringify({
         collection: selectedValue.toLowerCase(),
-        database: dataBase,
-        dataSource: dataSource,
+        database: "db-monkila",
+        dataSource: "db-monkila",
     });
 
     const response = await fetch(`${proxy}${url}`, {
