@@ -2,9 +2,9 @@ const dataSelect = document.getElementById('dataSelect');
 const fetchDataButton = document.getElementById('fetchData');
 const editorIframe = document.getElementById('editorIframe');
 
-const apiKey = process.env.API_KEY;
-const dataBase = process.env.DATABASE;
-const dataSource = process.env.DATA_SOURCE;
+// const apiKey = process.env.API_KEY;
+// const dataBase = process.env.DATABASE;
+// const dataSource = process.env.DATA_SOURCE;
 
 
 
