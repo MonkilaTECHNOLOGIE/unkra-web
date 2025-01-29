@@ -228,6 +228,10 @@
 
     <script>
 
+        const apiKey = process.env.API_KEY;
+        const dataBase = process.env.DATABASE;
+        const dataSource = process.env.DATA_SOURCE;
+
         localStorage.clear();
 
         function showModal(title, message) {
@@ -269,12 +273,12 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'api-key': 'avROr1S2KOP9G6BnMnIBBbPzBLxYVzoCdvNkNkJWVKZVzrgTW54uS83OP6wkXaul'
+                        'api-key': apiKey
                     },
                     body: JSON.stringify({
                         collection: 'users',
-                        database: 'db-monkila',
-                        dataSource: 'db-monkila',
+                        database: dataBase,
+                        dataSource: dataSource,
                         filter: { username }
                     })
                 });
@@ -325,12 +329,12 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'api-key': 'avROr1S2KOP9G6BnMnIBBbPzBLxYVzoCdvNkNkJWVKZVzrgTW54uS83OP6wkXaul'
+                        'api-key': apiKey
                     },
                     body: JSON.stringify({
                         collection: 'users',
-                        database: 'db-monkila',
-                        dataSource: 'db-monkila',
+                        database: dataBase,
+                        dataSource: dataSource,
                         document: { username, password: password }
                     })
                 });
