@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <title>UNKRA</title>
     <style>
         body {
@@ -61,12 +62,13 @@
         }
 
         .image-container img {
-            width: 500px;
-            height: 500px;
+            width: 420px;
+            height: 420px;
             object-fit: cover;
-            border-radius: 20px;
-            
-        }
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 20%;
+          }
 
         .frame {
             background-color: #D9D9D9;
@@ -76,6 +78,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             text-align: center;
             animation: fadeIn 1s ease-in-out;
+            margin-top: 10%;
         }
 
         @keyframes fadeIn {
@@ -176,49 +179,54 @@
         .profile-container {
             position: relative;
             cursor: pointer;
-            margin-right: 20px;
-        }
-
-        .profile-container img {
-            width: 50px;
-            height: 50px;
+          }
+      
+          .profile-container img {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
-        }
-
-        .dropdown-menu {
-            display: none;
+            border: 2px solid white;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+          }
+      
+          .profile-container:hover img {
+            transform: scale(1.05);
+          }
+      
+          .dropdown-menu {
             position: absolute;
-            top: 50px;
+            top: 55px;
             right: 0;
             background-color: white;
-            color: black;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .dropdown-menu a {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease;
+          }
+      
+          .dropdown-menu a {
             display: block;
-            padding: 10px;
+            padding: 12px 20px;
             text-decoration: none;
-            color: black;
+            color: #333;
             font-size: 14px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .dropdown-menu a:last-child {
+            transition: background 0.3s ease;
+          }
+      
+          .dropdown-menu a:hover {
+            background-color: #f2f2f2;
+          }
+      
+          .dropdown-menu a:last-child {
             color: red;
-        }
-
-        .profile-container:hover .dropdown-menu {
+          }
+      
+          .profile-container:hover .dropdown-menu {
             display: block;
-        }
+          }
 
     </style>
 </head>
@@ -241,7 +249,7 @@
         </div>
         <div class="frame">
             <h1>Bienvenue Chez UNKRA</h1>
-            <button class="button" onclick="showModal('Chargement de la carte...', '/unkra-web/carte/')">Visualiser la carte</button>
+            <button class="button" onclick="showModal('Chargement de la carte...', '/unkra-web/carte/')">Visualiser le réseau</button>
             <!-- <button class="button" onclick="showModal('Chargement des données...', '/unkra-web/data/')">Visualiser les données</button> -->
         </div>
     </div>
